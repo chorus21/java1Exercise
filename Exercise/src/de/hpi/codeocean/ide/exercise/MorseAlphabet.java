@@ -33,6 +33,7 @@ public class MorseAlphabet {
 		morseAlphabet.add(new MorseCharacter('R', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.LONG, CypherSymbol.SHORT, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('S', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.BLANK)));
 		// here is also missing a T
+		morseAlphabet.add(new MorseCharacter('T', Arrays.asList(CypherSymbol.LONG, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('U', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.LONG, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('V', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.LONG, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('W', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.BLANK)));
@@ -42,6 +43,7 @@ public class MorseAlphabet {
 		morseAlphabet.add(new MorseCharacter('0', Arrays.asList(CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('1', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.BLANK)));
 		// and the number 2 is also missing
+		morseAlphabet.add(new MorseCharacter('2', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('3', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('4', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.LONG, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('5', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.BLANK)));
