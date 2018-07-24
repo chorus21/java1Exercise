@@ -17,6 +17,7 @@ public class MorseAlphabet {
 		morseAlphabet.add(new MorseCharacter('C', Arrays.asList(CypherSymbol.LONG, CypherSymbol.SHORT, CypherSymbol.LONG, CypherSymbol.SHORT, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('D', Arrays.asList(CypherSymbol.LONG, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.BLANK)));
 		// here, the E is missing. Please add it.
+		morseAlphabet.add(new MorseCharacter('E', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('F', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.LONG, CypherSymbol.SHORT, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('G', Arrays.asList(CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.SHORT, CypherSymbol.BLANK)));
 		morseAlphabet.add(new MorseCharacter('H', Arrays.asList(CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.SHORT, CypherSymbol.BLANK)));
