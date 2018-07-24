@@ -17,7 +17,9 @@ public class MorseCharacter {
 		this.character = character;
 		this.morseSymbol = morseSymbol;
 	}
-
+	public getCharacter() {
+		return this.character;
+	}
 	public boolean equals(MorseCharacter other) {
 		/* If two MorseCharacters have the same morseSymbol size and 
 		 * each of their morseSymbols is equal, the MorseCharacters are equal.
