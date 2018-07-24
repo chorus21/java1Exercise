@@ -17,7 +17,7 @@ public class MorseCharacter {
 		this.character = character;
 		this.morseSymbol = morseSymbol;
 	}
-	public getCharacter() {
+	public char getCharacter() {
 		return this.character;
 	}
 	public boolean equals(MorseCharacter other) {
