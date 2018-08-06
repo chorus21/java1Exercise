@@ -1,6 +1,7 @@
 package de.hpi.codeocean.ide.exercise;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -47,7 +48,12 @@ public class Decoder {
 		 * should be closed again to free up the resources again.
 		 * Add the respective missing statements here.
 		 */
-		Reader reader = new FileReader(file);
+		try {
+			Reader reader = new FileReader(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// Here we have to read the file character by character and append each character
 		// to the StringBuilder sb. If you don't know yet how to do that, be encouraged to
 		// search the internet, how to read a file characterwise and how to append a character to a StringBuilder.

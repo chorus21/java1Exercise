@@ -10,7 +10,7 @@ public class Main {
         // An object of type File is created. 
      	// It holds a reference onto the file secretCode.txt, 
 		// which resides directly in our exercise folder.
-		File file = new File("secretCode.txt");
+		File file = new File("C:\\Users\\ykang\\git\\java1Exercise\\Exercise\\src\\secretCode.txt");
     	
 	    	// In case the passed file does not exist, the program terminates here with
 		    // a suited output message.

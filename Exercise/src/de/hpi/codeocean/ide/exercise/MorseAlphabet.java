@@ -53,5 +53,10 @@ public class MorseAlphabet {
 		morseAlphabet.add(new MorseCharacter('9', Arrays.asList(CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.LONG, CypherSymbol.SHORT, CypherSymbol.BLANK)));
 	}
 
+	public List<MorseCharacter> getMorseAlphabet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
