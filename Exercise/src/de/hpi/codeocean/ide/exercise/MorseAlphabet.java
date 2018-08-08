@@ -55,7 +55,8 @@ public class MorseAlphabet {
 
 	public List<MorseCharacter> getMorseAlphabet() {
 		// TODO Auto-generated method stub
-		return null;
+		List<MorseCharacter> morseAlphabet = this.morseAlphabet;	
+		return morseAlphabet;
 	}
 
 

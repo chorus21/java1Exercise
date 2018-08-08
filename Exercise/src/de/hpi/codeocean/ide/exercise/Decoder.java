@@ -50,14 +50,22 @@ public class Decoder {
 		 */
 		try {
 			Reader reader = new FileReader(file);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		// Here we have to read the file character by character and append each character
 		// to the StringBuilder sb. If you don't know yet how to do that, be encouraged to
 		// search the internet, how to read a file characterwise and how to append a character to a StringBuilder.
-		
+			char[] cbuf = null;
+			int i = reader.read(cbuf);
+
+			for(char c : cbuf) {
+				sb.append(c);
+			}
+			
+			reader.close();
+			
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+
 		return sb.toString();
 	}
 	
