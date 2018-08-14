@@ -1,11 +1,12 @@
 package de.hpi.codeocean.ide.exercise;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Decoder {
@@ -53,13 +54,10 @@ public class Decoder {
 		// Here we have to read the file character by character and append each character
 		// to the StringBuilder sb. If you don't know yet how to do that, be encouraged to
 		// search the internet, how to read a file characterwise and how to append a character to a StringBuilder.
-			char[] cbuf = null;
-			int i = reader.read(cbuf);
-
-			for(char c : cbuf) {
+			while (reader.ready()) {
+				char c = (char) reader.read();  // 43 for '+', 45 for '-' 
 				sb.append(c);
 			}
-			
 			reader.close();
 			
 		} catch (IOException ex) {
@@ -77,6 +75,7 @@ public class Decoder {
 		
 		/* A MorseCharacter consists of multiple CypherSymbols,
 		 * multiple MorseCharacters make up a morseStream (which is implemented as an ArrayList) */
+		
 		List<MorseCharacter> morseStream = new ArrayList<>();
 		List<CypherSymbol> morseSymbol = new ArrayList<>();
 		
@@ -84,7 +83,6 @@ public class Decoder {
 					
 		// If the next character of the inputStream after the start or after a CYPHER_OFF is a CYPHER_ON,
 		// we have found the start of a new CypherSymbol.
-			
 		// If the next character after that is a CYPHER_OFF, 
 		// we have found a CypherSymbol SHORT.
 		// Otherwise, if the next character is a CYPHER_ON, 
@@ -101,7 +99,40 @@ public class Decoder {
 		// Afterwards, the next MorseCharacter can be processed.
 		// (Take care: calling clear() on the list of the current morseSymbol possibly deletes values that are still needed in the morseStream,
 		//   as morseStream holds references onto the lists used within MorseSymbol.)
+		char start = CYPHER_OFF;
+		int cnt_on  = 0;
+		int cnt_off = 0;
 		
+		for (char c : inputStream) {
+			if (c == CYPHER_ON) {
+				cnt_on  += 1;
+				cnt_off  = 0;
+			} else if (c == CYPHER_OFF) {
+				cnt_off += 1;
+				if (cnt_on == 1 && cnt_off == 1) {
+					morseSymbol.add(CypherSymbol.SHORT);
+				  	cnt_on = 0;
+				} else if (cnt_on >= 1 && cnt_off == 1) {
+					morseSymbol.add(CypherSymbol.LONG);
+					cnt_on = 0;
+				} else if (cnt_on >= 0 && cnt_off == 2) {
+					morseSymbol.add(CypherSymbol.BLANK);
+					cnt_on = 0;
+
+					morseStream.addAll(Arrays.asList(morseSymbol));
+
+//					for (CypherSymbol ms : morseSymbol) {
+//						morseStream.addAll(index, ms);
+//						System.out.println(ms);
+//					}
+//					morseStream.addAll(index, morseSymbol);
+					morseSymbol.clear();
+//					index += 1;
+					
+				}
+			}
+		}
+
 		return morseStream;
 		
 	}

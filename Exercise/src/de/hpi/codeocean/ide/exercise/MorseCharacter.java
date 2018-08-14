@@ -13,12 +13,18 @@ public class MorseCharacter {
 	private char character;
 	
 	// Constructors and getters are still missing here.
+	public MorseCharacter(List<CypherSymbol> morseSymbol) {
+		this.morseSymbol = morseSymbol;
+	}
 	public MorseCharacter(char character, List<CypherSymbol> morseSymbol) {
 		this.character = character;
 		this.morseSymbol = morseSymbol;
 	}
 	public char getCharacter() {
 		return this.character;
+	}
+	public List<CypherSymbol> getMorseSymbol() {
+		return this.morseSymbol;
 	}
 	public boolean equals(MorseCharacter other) {
 		/* If two MorseCharacters have the same morseSymbol size and 
